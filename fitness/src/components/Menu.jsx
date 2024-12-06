@@ -6,7 +6,7 @@ import football from "../assets/football.jpg";
 import gsap from "gsap";
 import {motion} from 'framer-motion'
 
-const Menu = ({isOpen}) => {
+const Menu = () => {
   const [currentImage, setCurrentImage] = useState(fitness);
   const imgRef = useRef(null);
   const [hover, setHover] = useState(null);
@@ -140,8 +140,8 @@ const Menu = ({isOpen}) => {
 
 </svg>
       <div className="px-[15rem] flex flex-col justify-center gap-6 text-5xl">
-        {links.map((value) => (
-          <div
+        {links.map((value, i) => (
+          <motion.div initial = {{opacity: 0, translateX: -5}} animate = {{opacity: 1, translateX: 0}} transition={{duration: 0.3, delay: i * 0.5}}
             key={value.id}
             className="titles flex items-center"
             onMouseEnter={() => handleImages(value.img, value.id)}
@@ -167,7 +167,7 @@ const Menu = ({isOpen}) => {
               </div>
               {value.title}
             </h1>
-          </div>
+          </motion.div>
         ))}
       </div>
 

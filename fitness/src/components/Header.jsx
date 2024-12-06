@@ -18,7 +18,7 @@ const Header = () => {
          </div>
 
 <AnimatePresence mode = "wait">
-         {isActive && <Menu isOpen={isActive} />}
+         {isActive && <Menu  />}
          </AnimatePresence>
       </header>
 
