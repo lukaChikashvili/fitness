@@ -4,11 +4,17 @@ import pool from "../assets/pool.jpg";
 import sauna from "../assets/sauna.jpg";
 import football from "../assets/football.jpg";
 import gsap from "gsap";
+import {motion} from 'framer-motion'
 
-const Menu = () => {
+const Menu = ({isOpen}) => {
   const [currentImage, setCurrentImage] = useState(fitness);
   const imgRef = useRef(null);
   const [hover, setHover] = useState(null);
+
+  // menu ref
+  let menuRef = useRef(null);
+  
+
 
   const links = [
     { id: 1, title: "Fitness", img: fitness },
@@ -31,7 +37,7 @@ const Menu = () => {
   const handleHover = (id) => {
     setHover(id);
 
-    // Animate circles for the hovered link
+   
     gsap.to(`.circle1-${id}`, {
       translateX: 20,
       duration: 0.8,
@@ -52,7 +58,7 @@ const Menu = () => {
   const handleLeave = (id) => {
     setHover(undefined);
 
-    // Reset circle animations
+    
     gsap.to(`.circle1-${id}`, {
       translateX: 0,
       duration: 0.8,
@@ -78,10 +84,76 @@ const Menu = () => {
         { opacity: 1, duration: 0.5, delay: 0.5 }
       );
     }
+
+
+  
   }, [currentImage]);
 
+
+  useEffect(() => {
+  
+    if (menuRef.current) {
+      if (isOpen) {
+        gsap.to(menuRef.current, {
+          x: 0,
+          duration: 1.5,
+          ease: "power3.inOut",
+        });
+      } else {
+        gsap.to(menuRef.current, {
+          x: "-100%",
+          duration: 1.5,
+          ease: "power3.inOut",
+        });
+      }
+    }
+  }, [isOpen]);
+
+
+  // framer motion
+  const initialPath = `M100 0 L100 ${window.innerHeight} Q-100 ${window.innerHeight/2} 100 0`;
+
+  const targetPath = `M100 0 L100 ${window.innerHeight} Q100 ${window.innerHeight/2} 100 0`;
+
+
+  const curve = {
+
+    initial: {
+
+        d: initialPath
+
+    },
+
+    enter: {
+
+        d: targetPath,
+
+        transition: {duration: 1, ease: [0.76, 0, 0.24, 1]}
+
+    },
+
+    exit: {
+
+        d: initialPath,
+
+        transition: {duration: 0.8, ease: [0.76, 0, 0.24, 1]}
+
+    }
+
+  };
+
+
+
+
   return (
-    <div className="w-full h-screen bg-transparent absolute top-0 left-0 z-10 flex items-center justify-between gap-[10rem]">
+    <motion.div ref={menuRef}  style={{ transform: "translateX(100%)" }}   className="w-full h-screen bg-[#EEEEEE] absolute top-0 right-0 z-10 flex items-center justify-between gap-[10rem] text-[#343131]">
+        <svg className='svgCurve'>
+
+<motion.path variants={curve} initial="initial" animate="enter" exit="exit">
+  
+</motion.path>
+
+</svg>
       <div className="px-[15rem] flex flex-col justify-center gap-6 text-5xl">
         {links.map((value) => (
           <div
@@ -121,7 +193,7 @@ const Menu = () => {
           className="trans w-[30rem] h-[30rem] shadow-lg rounded-md object-fill transition-opacity duration-500 ease-in-out"
         />
       </div>
-    </div>
+    </motion.div>
   );
 };
 
