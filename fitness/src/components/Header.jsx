@@ -10,7 +10,7 @@ const Header = () => {
             Baia
          </div>
 
-         <div className='flex flex-col gap-2 cursor-pointer pointer-events-auto' onClick={() => setIsActive(!isActive)}>
+         <div className='flex flex-col gap-2 cursor-pointer menu' onClick={() => setIsActive(!isActive)}>
             <div className={`w-10 h-0.5 bg-white ${isActive ? "rotate-12": ""} origin-left duration-500 ease-in`} />
             <div className={`w-10 h-0.5 bg-white ${isActive ? "-rotate-12": ""} origin-left duration-500 ease-in`}/>
          </div>

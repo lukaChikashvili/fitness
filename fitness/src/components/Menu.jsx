@@ -90,7 +90,7 @@ const Menu = () => {
             onMouseEnter={() => handleImages(value.img, value.id)}
             onMouseLeave={() => handleLeave(value.id)}
           >
-            <h1 className="p-4 title duration-500 ease-in hover:text-gray-500 hover:translate-x-1 flex items-center gap-8">
+            <h1 className=" cursor-pointer p-4 title duration-500 ease-in hover:text-gray-500 hover:translate-x-1 flex items-center gap-12">
               <div>
                 <div
                   className={`w-4 h-4 rounded-full circle1-${value.id} ${
