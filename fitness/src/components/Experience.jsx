@@ -37,7 +37,7 @@ const Experience = () => {
 
   return (
    <>
-    <OrbitControls makeDefault />
+   
 
 <RigidBody type='fixed' onCollisionEnter={(e) => handleImpact(e.worldPosition)}>
         <mesh   ref={rippleMesh} rotation={[-Math.PI / 2, 0, 0]} position={[-6, 0, -5]} receiveShadow>

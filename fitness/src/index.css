@@ -4,13 +4,33 @@
 @tailwind utilities;
 
 
-body {
-  background: linear-gradient(135deg, #000000, #1c1f26, #121212);
-  width: 100%;
-  height: 100vh;
+html, body {
+  margin: 0;
+  padding: 0;
   font-family: 'Milkade', sans-serif;
-  overflow: hidden;
+  background: linear-gradient(180deg, #FFFFFF, #DADADA);
+  color: #ffffff;
+  overflow-x: hidden;
 }
+
+.app-container {
+  scroll-behavior: smooth;
+}
+
+section {
+  min-height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
+}
+
+
+
+
+
+
 
 .title {
   position: relative;
