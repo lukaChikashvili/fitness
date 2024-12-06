@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Menu from './Menu';
-import gsap from 'gsap'
+import { AnimatePresence } from 'framer-motion';
 
 const Header = () => {
     const [isActive, setIsActive] = useState(false);
@@ -17,7 +17,9 @@ const Header = () => {
             <div className={`w-10 h-0.5  ${isActive ? "bg-black" : "bg-white"} ${isActive ? "-rotate-12": ""} origin-left duration-500 ease-in`}/>
          </div>
 
+<AnimatePresence mode = "wait">
          {isActive && <Menu isOpen={isActive} />}
+         </AnimatePresence>
       </header>
 
     

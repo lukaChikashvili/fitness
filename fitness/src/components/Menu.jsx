@@ -90,24 +90,7 @@ const Menu = ({isOpen}) => {
   }, [currentImage]);
 
 
-  useEffect(() => {
-  
-    if (menuRef.current) {
-      if (isOpen) {
-        gsap.to(menuRef.current, {
-          x: 0,
-          duration: 1.5,
-          ease: "power3.inOut",
-        });
-      } else {
-        gsap.to(menuRef.current, {
-          x: "-100%",
-          duration: 1.5,
-          ease: "power3.inOut",
-        });
-      }
-    }
-  }, [isOpen]);
+
 
 
   // framer motion
@@ -146,7 +129,9 @@ const Menu = ({isOpen}) => {
 
 
   return (
-    <motion.div ref={menuRef}  style={{ transform: "translateX(100%)" }}   className="w-full h-screen bg-[#EEEEEE] absolute top-0 right-0 z-10 flex items-center justify-between gap-[10rem] text-[#343131]">
+    <motion.div  ref={menuRef} 
+         initial={{translateX: "103rem"}} animate = {{translateX: 0}} transition={{duration: 1.2, ease: [0.76, 0, 0.24, 1]}} exit={{translateX: "103rem"}}
+         className="w-full h-screen bg-[#EEEEEE] absolute top-0 right-0 z-10 flex items-center justify-between gap-[10rem] text-[#343131]">
         <svg className='svgCurve'>
 
 <motion.path variants={curve} initial="initial" animate="enter" exit="exit">
