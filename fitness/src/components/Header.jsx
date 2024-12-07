@@ -7,11 +7,11 @@ const Header = () => {
 
   return (
     <>
-      <header className="absolute top-0 left-0 w-full flex items-center justify-between px-[5rem] h-[5rem] text-white z-20">
-        <div className="text-2xl font-bold">Baia</div>
+      <header className="fixed top-0 left-0 w-full flex items-center justify-between px-[5rem] h-[5rem] text-white z-20">
+        <div className="text-2xl font-bold"></div>
 
         <div
-          className="flex flex-col gap-2 cursor-pointer menu"
+          className="flex flex-col gap-2 cursor-pointer menu "
           onClick={() => setIsActive(!isActive)}
         >
           <div
