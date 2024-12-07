@@ -7,25 +7,14 @@
 html, body {
   margin: 0;
   padding: 0;
+  width: 100%; 
+  height: 100%; 
   font-family: 'Milkade', sans-serif;
-  background: linear-gradient(180deg, #FFFFFF, #DADADA);
+  background: linear-gradient(180deg, #EBD3F8, #0B192C);
   color: #ffffff;
-  overflow-x: hidden;
+  overflow-x: hidden; 
+  position: relative;
 }
-
-.app-container {
-  scroll-behavior: smooth;
-}
-
-section {
-  min-height: 100vh; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-
-}
-
 
 
 
