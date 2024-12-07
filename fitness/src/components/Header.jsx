@@ -4,12 +4,14 @@ import { AnimatePresence } from "framer-motion";
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
+  
 
   return (
     <>
       <header className="fixed top-0 left-0 w-full flex items-center justify-between px-[5rem] h-[5rem] text-white z-20">
         <div className="text-2xl font-bold"></div>
 
+        
         <div
           className="flex flex-col gap-2 cursor-pointer menu "
           onClick={() => setIsActive(!isActive)}
