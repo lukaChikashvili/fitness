@@ -5,11 +5,15 @@ import sauna from "../assets/sauna.jpg";
 import football from "../assets/football.jpg";
 import gsap from "gsap";
 import {motion} from 'framer-motion'
+import { useNavigate } from "react-router-dom";
 
 const Menu = () => {
   const [currentImage, setCurrentImage] = useState(fitness);
   const imgRef = useRef(null);
   const [hover, setHover] = useState(null);
+
+  // navigation
+  let navigate = useNavigate();
 
   // menu ref
   let menuRef = useRef(null);
@@ -17,8 +21,8 @@ const Menu = () => {
 
 
   const links = [
-    { id: 1, title: "Fitness", img: fitness },
-    { id: 2, title: "Pool", img: pool },
+    { id: 1, title: "Fitness", img: fitness, href: '/' },
+    { id: 2, title: "Pool", img: pool, href: '/pool'  },
     { id: 3, title: "Sauna", img: sauna },
     { id: 4, title: "Football", img: football },
   ];
@@ -147,7 +151,7 @@ const Menu = () => {
             onMouseEnter={() => handleImages(value.img, value.id)}
             onMouseLeave={() => handleLeave(value.id)}
           >
-            <h1 className=" cursor-pointer p-4 title duration-500 ease-in hover:text-gray-500 hover:translate-x-1 flex items-center gap-12">
+            <h1 onClick={() => navigate(value.href)} className=" cursor-pointer p-4 title duration-500 ease-in hover:text-gray-500 hover:translate-x-1 flex items-center gap-12">
               <div>
                 <div
                   className={`w-4 h-4 rounded-full circle1-${value.id} ${

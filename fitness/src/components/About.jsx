@@ -24,7 +24,7 @@ const About = () => {
 
       <div className='flex items-center gap-[10rem] '>
          {icons.map((value) => (
-            <div className='flex flex-col items-center gap-8'>
+            <div className='flex flex-col items-center gap-8' key = {value.id}>
               <img src = {value.img} className='w-36 h-36' />
               <h2>{value.title}</h2>
             </div>

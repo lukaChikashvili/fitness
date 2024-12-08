@@ -1,10 +1,10 @@
 import { useContext, useEffect } from "react";
-import About from "./components/About"
-import AboutText from "./components/AboutText"
 
-import Header from "./components/Header"
-import Hero from "./components/Hero"
 import { UserContext } from "./context/UserContext";
+
+import { Route, Routes } from "react-router-dom";
+import Main from "./components/Main";
+import Pool from "./components/Pool";
 
 
 function App() {
@@ -20,12 +20,14 @@ function App() {
  }, [geo])
   return (
     <>
-    <div className="relative">
-      <Header />
-      <Hero />
-    </div>
-    <About />
-    <AboutText />
+
+    <Routes>
+      <Route path = "/" element = {<Main />} />
+      <Route path = "/pool" element = {<Pool />} />
+    </Routes>
+  
+    
+   
   </>
   )
 }
