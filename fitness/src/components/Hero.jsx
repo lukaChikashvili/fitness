@@ -28,7 +28,7 @@ const Hero = () => {
                       whileInView={{opacity: 1, clipPath:  "polygon(0 0%, 100% 0%, 100% 100%, 0 100%)"}}
                       transition={{duration: 0.8, ease: 'easeIn', delay: 1.3}} className="text-xl">Your Journey to Strength and Wellness Begins Here</motion.p>
          </div>
-        
+            
       </div>
 
       <p className="absolute bottom-12 right-12 cursor-pointer" onClick={() => setGeo(!geo)}>{geo ? "ENG" : "GEO"}</p>

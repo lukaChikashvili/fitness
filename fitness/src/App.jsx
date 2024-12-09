@@ -8,7 +8,8 @@ import Pool from "./components/Pool";
 
 
 function App() {
-  const {  geo } = useContext(UserContext);
+  const {  geo , theme} = useContext(UserContext);
+
 
   
   useEffect(() => {
@@ -17,7 +18,14 @@ function App() {
     }else {
       document.body.style.fontFamily = `font-family: "BPG Classic Medium", sans-serif;`
     }
- }, [geo])
+
+
+    if(theme === "light") {
+       document.body.style.backgroundColor = "white"
+    }else if(theme === "dark") {
+      document.body.style.backgroundColor = "#151515"
+    }
+ }, [geo, theme])
   return (
     <>
 
