@@ -3,7 +3,7 @@ import { UserContext } from '../context/UserContext'
 import fitness from "../assets/fitness.jpg";
 import pool from "../assets/pool.jpg";
 import sauna from "../assets/sauna.jpg";
-import football from "../assets/football.jpg";
+
 
 const Services = () => {
     const { theme } = useContext(UserContext);
