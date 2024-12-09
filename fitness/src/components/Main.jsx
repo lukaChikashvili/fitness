@@ -3,6 +3,8 @@ import AboutText from "../components/AboutText"
 
 import Header from "../components/Header"
 import Hero from "../components/Hero"
+import Services from "./Services"
+import Trainers from "./Trainers"
 
 const Main = () => {
   return (
@@ -16,6 +18,8 @@ const Main = () => {
    
     <About />
     <AboutText />
+    <Services />
+    <Trainers />
   
     </div>
   )

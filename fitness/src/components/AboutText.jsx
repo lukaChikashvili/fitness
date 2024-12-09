@@ -1,9 +1,16 @@
+import { useContext } from 'react';
 import baia from '../assets/baia.jpg'
 import { motion } from 'framer-motion'
+import { UserContext } from '../context/UserContext';
 
 const AboutText = () => {
+
+    
+  const { theme } = useContext(UserContext);
+
+
   return (
-    <div className='w-full min-h-screen p-[5rem] relative '>
+    <div className={`w-full min-h-screen p-[5rem] relative ${theme === 'light' ? "text-black" : "text-white"} `}>
         <div className='flex flex-col gap-8  '>
             
         <motion.h1 initial = {{opacity: 0,  clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)"}}
@@ -12,7 +19,7 @@ const AboutText = () => {
         className='text-3xl text-center'>About Us</motion.h1>
         <motion.span initial = {{width: 0, opacity: 0}} whileInView={{width: '100%', opacity: 1}}
              transition={{duration: 1, ease: 'easeIn', delay: 1.2}}
-        className='w-full h-[0.12px] bg-gray-500'></motion.span>
+        className='w-1/2 h-[0.12px] bg-gray-500'></motion.span>
         </div>
 
         <div className='flex items-center justify-between gap-20 mt-16 px-24   '>
