@@ -7,7 +7,7 @@ export const UserContext = createContext();
 const UserProvider = ({children}) => {
    
     const [geo, setGeo] = useState(false);
-    const [theme, setTheme] = useState("dark");
+    const [theme, setTheme] = useState("light");
 
     const toggleTheme = () => {
         setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));

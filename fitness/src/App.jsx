@@ -21,7 +21,7 @@ function App() {
 
 
     if(theme === "light") {
-       document.body.style.backgroundColor = "white"
+       document.body.style.backgroundColor = "#fff"
     }else if(theme === "dark") {
       document.body.style.backgroundColor = "#151515"
     }

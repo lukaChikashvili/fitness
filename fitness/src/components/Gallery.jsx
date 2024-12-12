@@ -6,7 +6,7 @@ const Gallery = () => {
     <div className='mt-[50vh] mb-[50vh]'>
        
        {data.map((value, i) => {
-          return <Card key={i} {...value} />
+          return <Card key={i} i = {i} {...value} />
        })}
     </div>
   )

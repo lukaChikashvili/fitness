@@ -6,6 +6,7 @@ import Hero from "../components/Hero"
 import Gallery from "./Gallery"
 import Services from "./Services"
 import Trainers from "./Trainers"
+import Zoom from "./Zoom"
 
 const Main = () => {
   return (
@@ -22,6 +23,7 @@ const Main = () => {
     <Services />
     <Trainers />
     <Gallery />
+    <Zoom />
   
     </div>
   )
